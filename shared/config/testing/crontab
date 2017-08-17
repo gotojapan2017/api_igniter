@@ -1,0 +1,13 @@
+# MAILTO=vunt@nal.vn
+
+# Register user 1st place
+00 00 * * * CODEIGNITER_ENV=testing php /home/cluser/application/current/apps/batch/ci.php score/register_first_place /dev/null 2>&1
+
+# Rebuild score temporary data
+00 00 * * * CODEIGNITER_ENV=testing php /home/cluser/application/current/apps/batch/ci.php score/rebuild_score_temporary_data /dev/null 2>&1
+
+# Set ranking end user by score
+00 00 * * * CODEIGNITER_ENV=testing php /home/cluser/application/current/apps/batch/ci.php score/ranking /dev/null 2>&1
+
+# Update service billing amount in 1st of month
+00 00 1 * * CODEIGNITER_ENV=testing php /home/cluser/application/current/apps/batch/ci.php billing/insert_history /dev/null 2>&1

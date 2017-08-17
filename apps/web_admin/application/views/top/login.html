@@ -1,0 +1,37 @@
+<div>
+    <div class="login_wrapper">
+        <div class="animate form login_form">
+            <section class="login_content">
+                <form method="post">
+                    <input type="hidden" name="r" value="<!--{$r|urlencode|default:''}-->">
+
+                    <h1>Service Sign In </h1>
+
+                    <!--{if !empty($error_msg)}-->
+                    <div class="alert alert-danger" style="text-shadow: none;"><!--{$error_msg|default:''}--></div>
+                    <!--{/if}-->
+
+                    <div>
+                        <input type="text" class="form-control" placeholder="User ID" name="login_id" required="" value="<!--{set_value('login_id')|default:''}-->">
+                    </div>
+                    <div>
+                        <input type="password" class="form-control" placeholder="Password"  name="password" required="">
+                    </div>
+                    <div>
+                        <button class="btn btn-default submit">Sign In</button>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="separator">
+                        <div>
+                            <h1><!--{$meta.site_name}--></h1>
+                            <p>&copy; <!--{$meta.site_name}--></p>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+
+    </div>
+</div>
